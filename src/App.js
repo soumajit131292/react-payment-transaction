@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
-import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import Checkout from '../src/component/checkout'
 import Confirmation from '../src/component/confirmation'

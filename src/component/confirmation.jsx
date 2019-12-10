@@ -12,13 +12,16 @@ class Confirmation extends Component {
             PayerID: ''
         }
     }
-    handleClickContinue = () => {
-        const query = new URLSearchParams(this.props.location.search);
-        console.log('payment', query.get('paymentId'))
-        paymentContinue(query.get('paymentId'), query.get('PayerID'), query.get('token')).then((res) => {
-            console.log(res.data)
-            this.props.history.push('/paymentsuccess')
+    componentDidMount = () => {
+        setTimeout(()=>{
+            const query = new URLSearchParams(this.props.location.search);
+            console.log('payment', query.get('paymentId'))
+            paymentContinue(query.get('paymentId'), query.get('PayerID'), query.get('token')).then((res) => {
+                console.log(res.data)
+                this.props.history.push('/paymentsuccess')
+            },4000)
         })
+       
     }
     handleClickCancel=()=>{
         this.props.history.push('/')
@@ -26,8 +29,7 @@ class Confirmation extends Component {
     render() {
         return (
             <div>
-                <Button onClick={this.handleClickCancel} color="primary" variant="contained">Cancel</Button>
-                <Button onClick={this.handleClickContinue} color="primary" variant="contained">Continue</Button>
+                <h3>Please wait.Don during transaction..</h3>
             </div>
         )
     }

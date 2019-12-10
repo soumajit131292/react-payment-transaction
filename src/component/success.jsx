@@ -4,7 +4,7 @@ class Success extends Component {
     componentDidMount(){
         window.setTimeout(() => {
             this.props.history.push('/');
-         }, 6000)
+         }, 3000)
      
     }
     render() {
